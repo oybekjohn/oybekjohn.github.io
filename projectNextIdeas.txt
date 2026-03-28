@@ -1,0 +1,6 @@
+- website background (IT related picture or animation)
+- resume fix for all languages
+- yutuqlar bo'limini transparend qilish
+- barcha ma'lumotlarni yangilash to'ldirish
+- default language (english)
+- firebase integration for free
