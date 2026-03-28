@@ -2,6 +2,15 @@
 - resume fix for all languages
 - yutuqlar bo'limini transparend qilish
 - barcha ma'lumotlarni yangilash to'ldirish
+- 3ta rasm almashib turishim (dokumentalniy, ko'cha, sport)
+#- rasm atrofi live qilayotgandek qilish
 - textlarni sahifa kengligida qilish
 - default language (english)
-- firebase integration for free
+- firebase integration for free for contacting me via email
+
+Some AI ideas for my portfolio website:
+- small AI chatbot for answering questions about me
+- AI assistant for helping me with my work
+- AI assistant for helping me with my personal life
+- AI agent for helping me with my work and personal life
+
