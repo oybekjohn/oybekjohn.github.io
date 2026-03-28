@@ -2,5 +2,6 @@
 - resume fix for all languages
 - yutuqlar bo'limini transparend qilish
 - barcha ma'lumotlarni yangilash to'ldirish
+- textlarni sahifa kengligida qilish
 - default language (english)
 - firebase integration for free
