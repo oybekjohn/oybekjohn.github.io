@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="uz" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Oybek Xushvaqtov — Dasturchi, O'qituvchi, AI Enthusiast. Shaxsiy CV va portfolio sayti." />
+    <meta name="description"
+        content="Oybek Xushvaqtov — AI Automation Developer, Telegram Bot Builder & Programming Teacher. I build AI-powered bots and automation systems that save time and increase efficiency." />
     <meta name="author" content="Oybek Xushvaqtov" />
-    <title>Oybek Xushvaqtov | CV</title>
+    <meta name="keywords" content="AI Developer, Telegram Bot, Automation, Python, Portfolio, Oybek Xushvaqtov" />
+    <meta property="og:title" content="Oybek Xushvaqtov | AI Automation Developer" />
+    <meta property="og:description"
+        content="I build AI-powered Telegram bots and automation systems that save time and increase efficiency." />
+    <meta property="og:type" content="website" />
+    <title>Oybek Xushvaqtov | AI Automation Developer</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
     <!-- Font Awesome -->
@@ -17,6 +23,9 @@
 </head>
 
 <body>
+
+    <!-- ========== STARFIELD CANVAS ========== -->
+    <canvas id="starfield"></canvas>
 
     <!-- ========== SIDEBAR / HEADER ========== -->
     <nav class="sidebar" id="sideNav">
@@ -40,30 +49,35 @@
 
             <ul class="nav-links">
                 <li><a class="nav-links__item active" href="#about">
-                    <span class="nav-links__icon">👤</span> <span data-i18n="nav_about">Men haqimda</span></a></li>
+                        <span class="nav-links__icon">👤</span> <span data-i18n="nav_about">About Me</span></a></li>
                 <li><a class="nav-links__item" href="#education">
-                    <span class="nav-links__icon">🎓</span> <span data-i18n="nav_education">Ta'lim</span></a></li>
+                        <span class="nav-links__icon">🎓</span> <span data-i18n="nav_education">Education</span></a>
+                </li>
                 <li><a class="nav-links__item" href="#experience">
-                    <span class="nav-links__icon">💼</span> <span data-i18n="nav_experience">Tajriba</span></a></li>
+                        <span class="nav-links__icon">💼</span> <span data-i18n="nav_experience">Experience</span></a>
+                </li>
                 <li><a class="nav-links__item" href="#awards">
-                    <span class="nav-links__icon">🏆</span> <span data-i18n="nav_awards">Yutuqlar</span></a></li>
+                        <span class="nav-links__icon">🏆</span> <span data-i18n="nav_awards">Awards</span></a></li>
                 <li><a class="nav-links__item" href="#skills">
-                    <span class="nav-links__icon">⚡</span> <span data-i18n="nav_skills">Skillar</span></a></li>
+                        <span class="nav-links__icon">⚡</span> <span data-i18n="nav_skills">Skills</span></a></li>
                 <li><a class="nav-links__item" href="#interests">
-                    <span class="nav-links__icon">🎯</span> <span data-i18n="nav_interests">Qiziqishlar</span></a></li>
+                        <span class="nav-links__icon">🎯</span> <span data-i18n="nav_interests">Interests</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#contact">
+                        <span class="nav-links__icon">📩</span> <span data-i18n="nav_contact">Contact</span></a></li>
             </ul>
 
-            <!-- Language Switcher — 5 languages -->
+            <!-- Language Switcher — 4 languages -->
             <div class="lang-switch" id="langSwitch">
-                <button class="lang-switch__btn active" data-lang="uz">UZ</button>
+                <button class="lang-switch__btn" data-lang="uz">UZ</button>
                 <button class="lang-switch__btn" data-lang="ru">RU</button>
-                <button class="lang-switch__btn" data-lang="en">EN</button>
+                <button class="lang-switch__btn active" data-lang="en">EN</button>
                 <button class="lang-switch__btn" data-lang="ar">AR</button>
             </div>
 
             <!-- Resume Download -->
-            <a class="nav-resume-btn" id="resumeBtn" href="assets/file/myCV2025_uz.pdf" download>
-                <span data-i18n="nav_resume">📄 Rezumeyim</span>
+            <a class="nav-resume-btn" id="resumeBtn" href="assets/file/myCV2025_en.pdf" download>
+                <span data-i18n="nav_resume">📄 My Resume</span>
             </a>
         </div>
     </nav>
@@ -74,44 +88,60 @@
 
             <!-- ===== ABOUT / HERO ===== -->
             <section class="hero" id="about">
-                <div class="hero__avatar-wrap">
-                    <img class="hero__avatar" src="assets/img/mypic_oq.jpg" alt="Oybek Xushvaqtov" />
+                <!-- Photo Carousel -->
+                <div class="hero__carousel-wrap">
+                    <div>
+                        <div class="hero__carousel" id="heroCarousel">
+                            <img class="hero__carousel-img active" src="assets/img/documentarypic.jpg"
+                                alt="Oybek - Documentary" />
+                            <img class="hero__carousel-img" src="assets/img/streetpic.jpg" alt="Oybek - Street" />
+                            <img class="hero__carousel-img" src="assets/img/sportpic.jpg" alt="Oybek - Sport" />
+                        </div>
+                        <div class="hero__carousel-dots" id="carouselDots">
+                            <button class="hero__carousel-dot active" data-slide="0" aria-label="Photo 1"></button>
+                            <button class="hero__carousel-dot" data-slide="1" aria-label="Photo 2"></button>
+                            <button class="hero__carousel-dot" data-slide="2" aria-label="Photo 3"></button>
+                        </div>
+                    </div>
                 </div>
 
                 <h1 class="hero__name">Oybek <span>Xushvaqtov</span></h1>
 
+                <p class="hero__tagline" data-i18n="hero_tagline">I build AI-powered Telegram bots and automation
+                    systems that save time and increase efficiency.</p>
+
                 <div class="hero__subtitle">
-                    <span data-i18n="hero_subtitle">Toshkent · O'zbekiston</span> &nbsp;|&nbsp;
+                    <span data-i18n="hero_subtitle">Tashkent · Uzbekistan</span> &nbsp;|&nbsp;
                     <a href="tel:+998950558869">☎️ +99895 055 88 69</a> &nbsp;·&nbsp;
                     📩 <a href="mailto:oybeksjob@gmail.com">oybeksjob@gmail.com</a>
                 </div>
 
                 <p class="hero__bio" data-i18n="hero_bio1">
-                    Dasturlash sohasida 5 yillik va o'qituvchilik faoliyatida 3 yillik tajribaga egaman.
-                    Dasturlash tillaridan C++ va Python dasturlash tillarini chuqur bilaman. "Zamonaviy
-                    kommunikatsiyalar" MCHJ (zk.uz) kompaniyasidagi ish va o'qish faoliyatim davomida katta dasturiy
-                    loyihalarda ishtirok etdim. Undan tashqari Mirzo Ulug'bek nomidagi ixtisoslashtirilgan prezident
-                    maktabida va Renessans ta'lim universitetdagi faoliyatim davomida "AI Club" rahbari bo'ldim
-                    va darslardan tashqari o'quvchilarga Sun'iy intellekt va Data analitika sohalaridan dars berdim,
-                    undan tashqari ochiq va bepul online ta'lim platformaga asos soldim.
+                    I have 5 years of experience in programming and 3 years in teaching. I have deep knowledge of C++
+                    and Python programming languages. During my work and studies at "Zamonaviy Kommunikatsiyalar" LLC
+                    (zk.uz), I participated in large-scale software projects. Additionally, I led the AI Club at the
+                    Mirzo Ulugbek Presidential School and Renaissance Education University, teaching students Artificial
+                    Intelligence and Data Analytics beyond regular classes, and founded an open, free online learning
+                    platform.
                 </p>
 
                 <p class="hero__bio" data-i18n-html="hero_bio2">
                     <a href="https://renessans.gitbook.io/" target="_blank">renessans.gitbook.io</a> –
-                    ochiq, bepul online ta'lim platformasiga asos soldim, hozirda ushbu platformadagi ma'lumotlar
-                    to'ldiryapti, keyinchalik dasturlash va sun'iy intellekt asoslarini o'rganmoqchi bo'lgan barcha
-                    uchun ochiq va bepul ta'lim platformasi bo'lishi maqsad qilingan.
+                    I founded an open, free online education platform currently being filled with content, aimed at
+                    providing step-by-step learning resources for anyone wanting to learn programming and AI
+                    fundamentals.
                 </p>
 
                 <p class="hero__bio" data-i18n-html="hero_bio3">
                     <a href="https://t.me/data_analitiks" target="_blank">@data_analitiks</a> –
-                    O'zbekistondagi birinchi data analitika telegram kanali orqali zamonaviy soha Data analitika va
-                    sun'iy intellektga oid jonli va yozib olingan darslar, foydali resurslar, tahliliy maqolalar va
-                    o'quv materiallarini muntazam ulashish.
+                    The first Data Analytics Telegram channel in Uzbekistan, through which I regularly share live and
+                    recorded lessons, useful resources, analytical articles, and educational materials on Data Analytics
+                    and AI.
                 </p>
 
                 <div class="social">
-                    <a class="social__link" href="https://www.linkedin.com/in/oybekjohn/" target="_blank" aria-label="LinkedIn">
+                    <a class="social__link" href="https://www.linkedin.com/in/oybekjohn/" target="_blank"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i></a>
                     <a class="social__link" href="https://github.com/oybekjohn" target="_blank" aria-label="GitHub">
                         <i class="fab fa-github"></i></a>
@@ -122,34 +152,41 @@
 
             <!-- ===== EDUCATION ===== -->
             <section class="section" id="education">
-                <h2 class="section__title" data-i18n="sec_education">Ta'lim</h2>
+                <h2 class="section__title" data-i18n="sec_education">Education</h2>
 
                 <div class="timeline">
                     <div class="card fade-in">
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/iiau-logo.png" alt="IIAU Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="edu1_org">O'zbekiston xalqaro islom akademiyasi</div>
-                                <div class="card__role" data-i18n="edu1_role">Magistratura / Axborot xavfsizligini boshqarish</div>
-                                <span class="card__date" data-i18n="edu1_date">📅 Sentyabr 2021 – Iyul 2023</span>
+                                <div class="card__org" data-i18n="edu1_org">International Islamic Academy of Uzbekistan
+                                </div>
+                                <div class="card__role" data-i18n="edu1_role">Master's / Information Security Management
+                                </div>
+                                <span class="card__date" data-i18n="edu1_date">📅 September 2021 – July 2023</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="edu1_desc1">"Sun'iy intellekt yordamida dars jarayonini tahlil qilish va uning algoritmlari" mavzusida magistrlik ishi uchun dasturiy ta'minot ishlab chiqilgan.</p>
+                            <p data-i18n="edu1_desc1">Developed software for master's thesis on "Analyzing the
+                                educational process using artificial intelligence and its algorithms".</p>
                         </div>
                     </div>
 
                     <div class="card fade-in">
                         <div class="card__header">
+                            <img class="card__logo" src="assets/img/tuit-logo.png" alt="TUIT Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="edu2_org">Toshkent axborot texnologiyalari universiteti</div>
-                                <div class="card__role" data-i18n="edu2_role">Bakalavr / Kompyuter injiniringi</div>
-                                <span class="card__date" data-i18n="edu2_date">📅 Sentyabr 2016 – Iyul 2020</span>
+                                <div class="card__org" data-i18n="edu2_org">Tashkent University of Information
+                                    Technologies</div>
+                                <div class="card__role" data-i18n="edu2_role">Bachelor's / Computer Engineering</div>
+                                <span class="card__date" data-i18n="edu2_date">📅 September 2016 – July 2020</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="edu2_desc1">Matematik dasturlash olimpiadalari, dasturiy ta'minot loyihalash va ularni ishlab chiqish o'rganildi.</p>
-                            <p data-i18n="edu2_desc2">Dasturlash (C/C++, Python), Algoritlar va Ma'lumotlar tuzilmasi, Tarmoq va Operatsion tizimlar.</p>
+                            <p data-i18n="edu2_desc1">Studied mathematical programming olympiads, software design, and
+                                development.</p>
+                            <p data-i18n="edu2_desc2">Programming (C/C++, Python), Algorithms and Data Structures,
+                                Networks and Operating Systems.</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +194,7 @@
 
             <!-- ===== EXPERIENCE ===== -->
             <section class="section" id="experience">
-                <h2 class="section__title" data-i18n="sec_experience">Tajriba</h2>
+                <h2 class="section__title" data-i18n="sec_experience">Experience</h2>
 
                 <div class="timeline">
                     <!-- Renessans -->
@@ -165,15 +202,20 @@
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/renessans-logo.svg" alt="Renessans Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="exp1_org">"Renessans ta'lim universiteti" MCHJ</div>
-                                <div class="card__role" data-i18n="exp1_role">Axborot texnologiyalari kafedrasi o'qituvchisi</div>
-                                <span class="card__date" data-i18n="exp1_date">📅 Sentyabr 2023 – Iyul 2025</span>
+                                <div class="card__org" data-i18n="exp1_org">"Renaissance Education University" LLC</div>
+                                <div class="card__role" data-i18n="exp1_role">IT Department Lecturer</div>
+                                <span class="card__date" data-i18n="exp1_date">📅 September 2023 – July 2025</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp1_desc1">Darslarda Python, C++ va boshqa tegishli dasturlash tillari asosida laboratoriya va loyiha ishlari tashkil etish.</p>
-                            <p data-i18n="exp1_desc2">Fan bo'yicha o'quv-uslubiy materiallar, testlar, slaydlar va dars ishlanmalarini tayyorlash.</p>
-                            <p data-i18n="exp1_desc3">Zamonaviy o'quv dasturlarini ishlab chiqish va ularni o'quv jarayoniga joriy etish.</p>
+                            <p data-i18n="exp1_desc1">Organizing laboratory and project work based on Python, C++ and
+                                other programming languages, developing students' algorithmic thinking and practical
+                                skills.</p>
+                            <p data-i18n="exp1_desc2">Preparing teaching materials, tests, slides, and lesson plans;
+                                training talented students for olympiads, hackathons, startups, and tech competitions.
+                            </p>
+                            <p data-i18n="exp1_desc3">Developing modern curricula, participating in scientific research,
+                                writing articles and abstracts.</p>
                         </div>
                     </div>
 
@@ -182,15 +224,19 @@
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/muimi-logo.png" alt="MUIMI Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="exp2_org">Prezident ta'lim muassasalari Mirzo Ulug'bek maktab</div>
-                                <div class="card__role" data-i18n="exp2_role">O'qituvchi</div>
-                                <span class="card__date" data-i18n="exp2_date">📅 Oktyabr 2022 – Sentyabr 2023</span>
+                                <div class="card__org" data-i18n="exp2_org">Mirzo Ulugbek Presidential School</div>
+                                <div class="card__role" data-i18n="exp2_role">Teacher</div>
+                                <span class="card__date" data-i18n="exp2_date">📅 October 2022 – September 2023</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp2_desc1">O'quvchilarning mustaqil ishlash, kreativ fikrlash va raqamli savodxonlik darajasini oshirish.</p>
-                            <p data-i18n="exp2_desc2">O'quvchilarni mahalliy va xalqaro dasturlash olimpiadalari, IT tanlovlar va hackatonlarga tayyorlash.</p>
-                            <p data-i18n="exp2_desc3">muimi.uz – Faoliyatim davomida Mirzo Ulug'bek nomidagi maktabi uchun web sayt ishlab chiqdim.</p>
+                            <p data-i18n="exp2_desc1">Mentoring students in independent work, creative thinking, and
+                                digital literacy improvement.</p>
+                            <p data-i18n="exp2_desc2">Step-by-step preparation of students for programming olympiads, IT
+                                competitions, and hackathons. 2 ninth-grade students won 2nd and 3rd place at the
+                                national programming olympiad.</p>
+                            <p data-i18n="exp2_desc3">muimi.uz – Developed a website for the Mirzo Ulugbek Specialized
+                                School.</p>
                         </div>
                     </div>
 
@@ -200,14 +246,17 @@
                             <img class="card__logo" src="assets/img/gdgsc-logo.png" alt="GDSC Logo" />
                             <div class="card__header-text">
                                 <div class="card__org" data-i18n="exp3_org">Google Developers Students Club Lead</div>
-                                <div class="card__role" data-i18n="exp3_role">Google dasturchilar klubi sardori</div>
-                                <span class="card__date" data-i18n="exp3_date">📅 Sentyabr 2022 – Avgust 2023</span>
+                                <div class="card__role" data-i18n="exp3_role">Google Developer Club Leader</div>
+                                <span class="card__date" data-i18n="exp3_date">📅 September 2022 – August 2023</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp3_desc1">GDSC ning birinchi rasmiy klubiga asos soldim va 100+ a'zoni birlashtirdim.</p>
-                            <p data-i18n="exp3_desc2">Dasturlash, sun'iy intellekt, web dasturlash bo'yicha seminarlar tashkil qildim.</p>
-                            <p data-i18n="exp3_desc3">Innovatsion muhit yaratish va iqtidorli yoshlarni IT sohasiga yo'naltirish.</p>
+                            <p data-i18n="exp3_desc1">Founded the first official GDSC club at the International Islamic
+                                Academy of Uzbekistan and built an active community of 100+ members.</p>
+                            <p data-i18n="exp3_desc2">Organized seminars, workshops and hackathons on programming, AI,
+                                web development, mobile development, and cloud technologies.</p>
+                            <p data-i18n="exp3_desc3">Promoted innovative environment, directed talented youth to IT,
+                                and organized professional speaker sessions and networking events.</p>
                         </div>
                     </div>
 
@@ -216,14 +265,17 @@
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/iiau-logo.png" alt="IIAU Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="exp4_org">O'zbekiston xalqaro islom akademiyasi</div>
-                                <div class="card__role" data-i18n="exp4_role">Laborant</div>
-                                <span class="card__date" data-i18n="exp4_date">📅 Oktyabr 2021 – Mart 2022</span>
+                                <div class="card__org" data-i18n="exp4_org">International Islamic Academy of Uzbekistan
+                                </div>
+                                <div class="card__role" data-i18n="exp4_role">Laboratory Assistant</div>
+                                <span class="card__date" data-i18n="exp4_date">📅 October 2021 – March 2022</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp4_desc1">Kompyuter va texnik vositalarning ishlashini ta'minlash.</p>
-                            <p data-i18n="exp4_desc2">Kafedra faoliyatiga texnik va tashkiliy ko'maklashish.</p>
+                            <p data-i18n="exp4_desc1">Ensuring the operation of computers and technical equipment used
+                                in the educational process.</p>
+                            <p data-i18n="exp4_desc2">Technical and organizational assistance in department activities,
+                                document preparation.</p>
                         </div>
                     </div>
 
@@ -232,20 +284,22 @@
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/zk-logo.svg" alt="ZK Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="exp5_org">"Zamonaviy Kommunikatsiyalar" MCHJ</div>
-                                <div class="card__role" data-i18n="exp5_role">Junior Backend dasturchisi</div>
-                                <span class="card__date" data-i18n="exp5_date">📅 Yanvar 2021 – Sentyabr 2021</span>
+                                <div class="card__org" data-i18n="exp5_org">"Zamonaviy Kommunikatsiyalar" LLC</div>
+                                <div class="card__role" data-i18n="exp5_role">Junior Backend Developer</div>
+                                <span class="card__date" data-i18n="exp5_date">📅 January 2021 – September 2021</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp5_desc1">Django Rest Framework yordamida REST API endpoint'larini ishlab chiqdim.</p>
-                            <p data-i18n="exp5_desc2">Attachment va Comments uchun umumiy modellarni yaratdim.</p>
-                            <p data-i18n="exp5_desc3">ORM so'rovlarini optimallashtirib, bazaga murojaat sonini kamaytirdim.</p>
-                            <p data-i18n="exp5_desc4">Indexlar qo'shib so'rovlar tezligini oshirdim. API'ni Swagger bilan hujjatlashtirdim.</p>
-                            <p data-i18n="exp5_desc5">Telegram bilan integratsiya qilib, hisobotlarni guruhiga yubordim.</p>
-                            <p data-i18n="exp5_desc6">Tashqi API'larga davriy so'rov yuboruvchi fon vazifalarini yozdim.</p>
-                            <p data-i18n="exp5_desc7">MySQL dan PostgreSQL ga ma'lumotlarni o'tkazish skriptlarini yozdim.</p>
-                            <p data-i18n="exp5_desc8">Saytni Gunicorn va Nginx orqali serverga joylab, ishga tushurdim.</p>
+                            <p data-i18n="exp5_desc1">Developed REST API endpoints using Django Rest Framework.</p>
+                            <p data-i18n="exp5_desc2">Created generic models for Attachments and Comments.</p>
+                            <p data-i18n="exp5_desc3">Optimized ORM queries using select_related, prefetch_related.</p>
+                            <p data-i18n="exp5_desc4">Added database indexes, documented API with Swagger.</p>
+                            <p data-i18n="exp5_desc5">Integrated Telegram for daily report delivery to group chats.</p>
+                            <p data-i18n="exp5_desc6">Wrote background tasks for periodic API requests using
+                                APScheduler.</p>
+                            <p data-i18n="exp5_desc7">Wrote data migration scripts from MySQL to PostgreSQL using Pandas
+                                and Django ORM.</p>
+                            <p data-i18n="exp5_desc8">Deployed the site using Gunicorn and Nginx.</p>
                         </div>
                     </div>
 
@@ -254,16 +308,19 @@
                         <div class="card__header">
                             <img class="card__logo" src="assets/img/IT_park-logo.png" alt="IT Park Logo" />
                             <div class="card__header-text">
-                                <div class="card__org" data-i18n="exp6_org">IT Park Samarqand filliali</div>
-                                <div class="card__role" data-i18n="exp6_role">Web dasturchi</div>
-                                <span class="card__date" data-i18n="exp6_date">📅 Sentyabr 2020 – Dekabr 2020</span>
+                                <div class="card__org" data-i18n="exp6_org">IT Park Samarkand Branch</div>
+                                <div class="card__role" data-i18n="exp6_role">Web Developer</div>
+                                <span class="card__date" data-i18n="exp6_date">📅 September 2020 – December 2020</span>
                             </div>
                         </div>
                         <div class="card__body">
-                            <p data-i18n="exp6_desc1">Loyihaning kod bazasini o'rganish.</p>
-                            <p data-i18n="exp6_desc2">Texnologik stack bilan tanishish.</p>
-                            <p data-i18n="exp6_desc3">Git versiya nazorati tartibini tushunish.</p>
-                            <p data-i18n="exp6_desc4">Dev environment ni sozlash.</p>
+                            <p data-i18n="exp6_desc1">Studying the project codebase (repository structure, architecture,
+                                components).</p>
+                            <p data-i18n="exp6_desc2">Getting familiar with the technology stack (frameworks, libraries,
+                                database, APIs).</p>
+                            <p data-i18n="exp6_desc3">Understanding Git version control (branches, commit rules, pull
+                                request process).</p>
+                            <p data-i18n="exp6_desc4">Setting up the local development environment.</p>
                         </div>
                     </div>
                 </div>
@@ -271,7 +328,7 @@
 
             <!-- ===== AWARDS ===== -->
             <section class="section" id="awards">
-                <h2 class="section__title" data-i18n="sec_awards">Yutuqlar va Sertifikatlar</h2>
+                <h2 class="section__title" data-i18n="sec_awards">Awards & Certifications</h2>
 
                 <div class="awards-grid">
                     <div class="award-item fade-in">
@@ -279,8 +336,9 @@
                             <img class="award-item__img" src="assets/img/year_teacher.jpg" alt="Best Teacher" />
                         </div>
                         <div class="award-item__body">
-                            <div class="award-item__title" data-i18n="award1_title">"YILNING ENG YAXSHI O'QITUVCHISI"</div>
-                            <p class="award-item__desc" data-i18n="award1_desc">2024-2025 o'quv yili uchun yilning eng yaxshi o'qituvchisi nominatsiyasi sovrindori.</p>
+                            <div class="award-item__title" data-i18n="award1_title">"TEACHER OF THE YEAR"</div>
+                            <p class="award-item__desc" data-i18n="award1_desc">Winner of the best teacher nomination
+                                for the 2024-2025 academic year.</p>
                         </div>
                     </div>
 
@@ -289,8 +347,10 @@
                             <img class="award-item__img" src="assets/img/tashakkurnoma.png" alt="Tashakkurnoma" />
                         </div>
                         <div class="award-item__body">
-                            <div class="award-item__title" data-i18n="award2_title">TASHAKKURNOMA</div>
-                            <p class="award-item__desc" data-i18n="award2_desc">2023-2024 o'quv yilida fidokorona xizmatlari uchun taqdirlandi.</p>
+                            <div class="award-item__title" data-i18n="award2_title">LETTER OF APPRECIATION</div>
+                            <p class="award-item__desc" data-i18n="award2_desc">Awarded by administration for active
+                                participation in educational processes and contribution to university ranking in
+                                2023-2024.</p>
                         </div>
                     </div>
 
@@ -300,7 +360,8 @@
                         </div>
                         <div class="award-item__body">
                             <div class="award-item__title" data-i18n="award3_title">GDSC Lead Certification</div>
-                            <p class="award-item__desc" data-i18n="award3_desc">Google Developer Student Club Lead at IIAU 2022-2023</p>
+                            <p class="award-item__desc" data-i18n="award3_desc">Google Developer Student Club Lead at
+                                IIAU 2022-2023</p>
                         </div>
                     </div>
 
@@ -309,18 +370,22 @@
                             <img class="award-item__img" src="assets/img/coursera_certification.png" alt="Coursera" />
                         </div>
                         <div class="award-item__body">
-                            <div class="award-item__title" data-i18n="award4_title">Tableau Public for Project Management</div>
-                            <p class="award-item__desc" data-i18n="award4_desc">Coursera online kursini o'qiganlik sertifikati.</p>
+                            <div class="award-item__title" data-i18n="award4_title">Tableau Public for Project
+                                Management</div>
+                            <p class="award-item__desc" data-i18n="award4_desc">Certificate for completing Coursera
+                                online course on Data Analytics and Project Management.</p>
                         </div>
                     </div>
 
                     <div class="award-item fade-in">
                         <div class="award-item__img-wrap">
-                            <img class="award-item__img" src="assets/img/hackerrank_sertificate_picture.png" alt="HackerRank" />
+                            <img class="award-item__img" src="assets/img/hackerrank_sertificate_picture.png"
+                                alt="HackerRank" />
                         </div>
                         <div class="award-item__body">
-                            <div class="award-item__title" data-i18n="award5_title">Python dasturlash tili Certification</div>
-                            <p class="award-item__desc" data-i18n="award5_desc">HackerRank platformasi orqali sertifikatlangan Python daraja.</p>
+                            <div class="award-item__title" data-i18n="award5_title">Python Certification</div>
+                            <p class="award-item__desc" data-i18n="award5_desc">Certified Python level through
+                                HackerRank platform.</p>
                         </div>
                     </div>
                 </div>
@@ -328,32 +393,32 @@
 
             <!-- ===== SKILLS ===== -->
             <section class="section" id="skills">
-                <h2 class="section__title" data-i18n="sec_skills">Skillar</h2>
+                <h2 class="section__title" data-i18n="sec_skills">Skills</h2>
 
                 <div class="skills-group">
-                    <h3 class="skills-group__title" data-i18n="skills_soft_title">🧠 Soft Skillar</h3>
+                    <h3 class="skills-group__title" data-i18n="skills_soft_title">🧠 Soft Skills</h3>
                     <div class="soft-skill-list">
                         <div class="soft-skill-item fade-in">
                             <span class="soft-skill-item__icon">✓</span>
-                            <span data-i18n="soft1">Mentorlik, murabbiylik va jamoani boshqarish ko'nikmalari</span>
+                            <span data-i18n="soft1">Mentorship, coaching, and team management skills</span>
                         </div>
                         <div class="soft-skill-item fade-in">
                             <span class="soft-skill-item__icon">✓</span>
-                            <span data-i18n="soft2">Muammolarni hal qilish va tanqidiy fikrlash</span>
+                            <span data-i18n="soft2">Problem solving and critical thinking</span>
                         </div>
                         <div class="soft-skill-item fade-in">
                             <span class="soft-skill-item__icon">✓</span>
-                            <span data-i18n="soft3">Samarali muloqot va omma oldida nutq so'zlash qobiliyati</span>
+                            <span data-i18n="soft3">Effective communication and public speaking</span>
                         </div>
                         <div class="soft-skill-item fade-in">
                             <span class="soft-skill-item__icon">✓</span>
-                            <span data-i18n="soft4">Tadbirlarni tashkil qilish va hamjamiyat qurish tajribasi</span>
+                            <span data-i18n="soft4">Event organization and community building experience</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="skills-group">
-                    <h3 class="skills-group__title" data-i18n="skills_hard_title">💻 Hard Skillar</h3>
+                    <h3 class="skills-group__title" data-i18n="skills_hard_title">💻 Hard Skills</h3>
                     <div class="skills-list">
                         <span class="skill-badge fade-in"><i class="fab fa-python"></i> Python</span>
                         <span class="skill-badge fade-in">📊 Data Analytics</span>
@@ -386,32 +451,69 @@
 
             <!-- ===== INTERESTS ===== -->
             <section class="section" id="interests">
-                <h2 class="section__title" data-i18n="sec_interests">Qiziqishlar / Ko'nikmalar</h2>
+                <h2 class="section__title" data-i18n="sec_interests">Interests / Competencies</h2>
 
                 <div class="interests-group">
-                    <h3 class="interests-group__title" data-i18n="int_skills_title">Ko'nikmalar</h3>
+                    <h3 class="interests-group__title" data-i18n="int_skills_title">Competencies</h3>
                     <div class="interests-list">
-                        <p data-i18n="int_skill1">O'quvchilarga dasturlash va sun'iy intellekt asoslarini oson va sodda usulda tushuntirish.</p>
-                        <p data-i18n="int_skill2">C++, Python, algoritmlash va sun'iy intellekt (AI) loyihalarida tajriba.</p>
-                        <p data-i18n="int_skill3">Web dasturlashda backend va frontend sohalari bilan ishlash.</p>
-                        <p data-i18n="int_skill4">Ma'lumotlar bazalari bilan ishlash: SQL, PostgreSQL orqali samarali querylar yozish.</p>
-                        <p data-i18n="int_skill5">Google ekotizimi vositalaridan professional foydalanish.</p>
+                        <p data-i18n="int_skill1">Teaching programming and AI fundamentals in an easy and understandable
+                            way.</p>
+                        <p data-i18n="int_skill2">Experience in C++, Python, algorithms, and AI projects.</p>
+                        <p data-i18n="int_skill3">Working with backend and frontend in web development (based on
+                            projects like muimi.uz).</p>
+                        <p data-i18n="int_skill4">Working with databases: writing efficient SQL, PostgreSQL queries.</p>
+                        <p data-i18n="int_skill5">Professional use of Google ecosystem tools: Google Sheets, Google
+                            Colab, Firebase.</p>
                     </div>
                 </div>
 
                 <div class="interests-group">
-                    <h3 class="interests-group__title" data-i18n="int_lang_title">Tillar</h3>
+                    <h3 class="interests-group__title" data-i18n="int_lang_title">Languages</h3>
                     <div class="interests-list">
-                        <p data-i18n="int_lang1">Ingliz tili: B2 (upper-intermediate) darajada, rus tili: yaxshi darajada.</p>
+                        <p data-i18n="int_lang1">English: B2 (upper-intermediate), Russian: good level.</p>
                     </div>
                 </div>
 
                 <div class="interests-group">
-                    <h3 class="interests-group__title" data-i18n="int_hobby_title">Qiziqishlar</h3>
+                    <h3 class="interests-group__title" data-i18n="int_hobby_title">Hobbies</h3>
                     <div class="interests-list">
-                        <p data-i18n="int_hobby1">Sun'iy intellekt loyihalari, shaxmat, kitob o'qish, va muammolarni hal qilish.</p>
+                        <p data-i18n="int_hobby1">AI projects, chess, reading books, and problem solving.</p>
                     </div>
                 </div>
+            </section>
+
+            <!-- ===== CONTACT ===== -->
+            <section class="section contact-section" id="contact">
+                <h2 class="section__title" data-i18n="sec_contact">Contact Me</h2>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactName" data-i18n="contact_name_label">Your
+                            Name</label>
+                        <input class="contact-form__input" type="text" id="contactName" placeholder="John Doe"
+                            required />
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactEmail" data-i18n="contact_email_label">Your
+                            Email</label>
+                        <input class="contact-form__input" type="email" id="contactEmail" placeholder="you@example.com"
+                            required />
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactMessage"
+                            data-i18n="contact_msg_label">Message</label>
+                        <textarea class="contact-form__textarea" id="contactMessage" placeholder="Write your message..."
+                            rows="5" required></textarea>
+                    </div>
+
+                    <div class="contact-msg contact-msg--success" id="contactSuccess" data-i18n="contact_success">
+                        Message sent successfully! I'll get back to you soon.</div>
+                    <div class="contact-msg contact-msg--error" id="contactError"></div>
+
+                    <button class="contact-form__submit" type="submit" id="contactSubmitBtn">
+                        <span data-i18n="contact_send">Send Message</span>
+                    </button>
+                </form>
             </section>
 
         </div>
@@ -422,9 +524,41 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- AI Chatbot Widget -->
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Chat with AI">
+        <span class="chat-icon">🤖</span>
+        <span class="close-icon">✕</span>
+    </button>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-header__avatar">🤖</div>
+            <div class="chatbot-header__info">
+                <div class="chatbot-header__name" data-i18n="chat_name">Oybek's AI Assistant</div>
+                <div class="chatbot-header__status" data-i18n="chat_status">Online</div>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chat-suggestions" id="chatSuggestions"></div>
+        <div class="chatbot-input-wrap">
+            <input class="chatbot-input" id="chatInput" type="text" placeholder="Ask me anything..."
+                autocomplete="off" />
+            <button class="chatbot-send" id="chatSend" aria-label="Send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
     <!-- Scripts -->
     <script src="js/translations.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/starfield.js"></script>
+    <script src="js/firebase-contact.js"></script>
+    <script src="js/chatbot.js"></script>
 
 </body>
 

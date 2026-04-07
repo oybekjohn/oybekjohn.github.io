@@ -77,6 +77,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ============================================
+    //  PHOTO CAROUSEL
+    // ============================================
+    const carousel = document.getElementById('heroCarousel');
+    const carouselDots = document.getElementById('carouselDots');
+
+    if (carousel && carouselDots) {
+        const images = carousel.querySelectorAll('.hero__carousel-img');
+        const dots = carouselDots.querySelectorAll('.hero__carousel-dot');
+        let currentSlide = 0;
+        let carouselInterval;
+
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % images.length);
+        }
+
+        function startCarousel() {
+            carouselInterval = setInterval(nextSlide, 4000);
+        }
+
+        function stopCarousel() {
+            clearInterval(carouselInterval);
+        }
+
+        // Dot click
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                stopCarousel();
+                showSlide(parseInt(dot.dataset.slide));
+                startCarousel();
+            });
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopCarousel);
+        carousel.addEventListener('mouseleave', startCarousel);
+
+        startCarousel();
+    }
+
+    // ============================================
     //  LANGUAGE ENGINE
     // ============================================
 
@@ -90,6 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
             linkKey: 'hero_bio3_link'
         }
     };
+
+    // Resume file map
+    const RESUME_MAP = {
+        uz: 'assets/file/myCV2025_uz.pdf',
+        en: 'assets/file/myCV2025_en.pdf',
+        ru: null,  // Not available yet
+        ar: null   // Not available yet
+    };
+
+    const resumeBtn = document.getElementById('resumeBtn');
 
     function setLanguage(lang) {
         if (!translations[lang]) return;
@@ -113,6 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Update placeholders
+        const nameInput = document.getElementById('contactName');
+        const emailInput = document.getElementById('contactEmail');
+        const msgInput = document.getElementById('contactMessage');
+        if (nameInput && t.contact_name_placeholder) nameInput.placeholder = t.contact_name_placeholder;
+        if (emailInput && t.contact_email_placeholder) emailInput.placeholder = t.contact_email_placeholder;
+        if (msgInput && t.contact_msg_placeholder) msgInput.placeholder = t.contact_msg_placeholder;
+
+        // Update chatbot input placeholder
+        const chatInput = document.getElementById('chatInput');
+        if (chatInput && t.chat_input_placeholder) chatInput.placeholder = t.chat_input_placeholder;
+
         // Set HTML lang and direction
         const htmlEl = document.documentElement;
         htmlEl.setAttribute('lang', lang);
@@ -123,8 +195,22 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
 
+        // Update resume button
+        if (resumeBtn) {
+            const resumePath = RESUME_MAP[lang];
+            if (resumePath) {
+                resumeBtn.href = resumePath;
+                resumeBtn.classList.remove('hidden');
+            } else {
+                resumeBtn.classList.add('hidden');
+            }
+        }
+
         // Store preference
         localStorage.setItem('cv-lang', lang);
+
+        // Dispatch event for chatbot to reinitialize
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     }
 
     // Language button click handlers
@@ -140,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // On page load: restore saved language or default to 'uz'
-    const savedLang = localStorage.getItem('cv-lang') || 'uz';
+    // On page load: restore saved language or default to 'en'
+    const savedLang = localStorage.getItem('cv-lang') || 'en';
     setLanguage(savedLang);
 });

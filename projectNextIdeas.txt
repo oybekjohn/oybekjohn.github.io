@@ -1,8 +1,8 @@
-- website background (IT related picture or animation)
+- website background (IT related picture or animation), Create a JavaScript animation for a night sky background with moving stars that react slightly to mouse movement. Optimize for performance.
 - resume fix for all languages
 - yutuqlar bo'limini transparend qilish
 - barcha ma'lumotlarni yangilash to'ldirish
-- 3ta rasm almashib turishim (dokumentalniy, ko'cha, sport)
+- 3ta rasm almashib turishim (dokumentalniy, ko'cha, sport) bu rasmlarni beraman
 #- rasm atrofi live qilayotgandek qilish
 - textlarni sahifa kengligida qilish
 - default language (english)
@@ -14,3 +14,210 @@ Some AI ideas for my portfolio website:
 - AI assistant for helping me with my personal life
 - AI agent for helping me with my work and personal life
 
+Positioning:
+"I build AI-powered Telegram bots and automation systems that save time and increase efficiency."
+
+Target:
+- Freelance clients
+- Automation projects
+- AI-based solutions
+
+
+
+===============================
+🚀 PORTFOLIO UPGRADE ROADMAP
+===============================
+
+GOAL:
+Transform portfolio from simple website → AI Automation Developer personal brand site
+
+
+===============================
+🔥 1. HERO SECTION (TOP PRIORITY)
+===============================
+
+IDEA:
+Strong first impression with clear value proposition
+
+TASKS:
+- Add strong headline
+- Add subheadline (what problem I solve)
+- Add CTA buttons (View Projects, Contact Me)
+- Add animated background (night sky / gradient)
+
+PROMPT:
+"Write a modern hero section for a portfolio website of an AI Automation Developer who builds Telegram bots and automation systems. Include a strong headline, subheadline, and 2 call-to-action buttons. Keep it short, powerful, and client-focused."
+
+PROMPT (CSS):
+"Create a modern hero section design using CSS with gradient background, centered content, large typography, and smooth hover animations for buttons."
+
+
+
+===============================
+🌌 2. BACKGROUND ANIMATION
+===============================
+
+IDEA:
+Make website visually impressive
+
+TASKS:
+- Add animated stars OR gradient animation
+- Add mouse interaction (optional)
+
+PROMPT:
+"Create a JavaScript animation for a night sky background with moving stars that react slightly to mouse movement. Optimize for performance."
+
+
+
+===============================
+💼 3. PROJECTS SECTION (MOST IMPORTANT)
+===============================
+
+IDEA:
+Convert projects into case studies (problem → solution → result)
+
+TASKS:
+- Rewrite all project descriptions
+- Add tech stack
+- Add demo / GitHub link
+- Add card design with hover effect
+
+PROMPT:
+"Rewrite this project description as a case study with structure: Problem, Solution, Result. Make it professional and client-focused."
+
+PROMPT (UI):
+"Design a modern project card with glassmorphism effect, hover animation, and clean layout using HTML and CSS."
+
+
+
+===============================
+🧠 4. ABOUT SECTION (PERSONAL BRAND)
+===============================
+
+IDEA:
+Tell my story in a professional way
+
+TASKS:
+- Add short bio
+- Mention teaching + programming
+- Connect to AI and automation
+
+PROMPT:
+"Write a professional 'About Me' section for a developer who is also a programming teacher and builds AI-powered automation systems. Keep it concise and impactful."
+
+
+
+===============================
+⚙️ 5. SKILLS SECTION
+===============================
+
+IDEA:
+Show skills visually (not boring list)
+
+TASKS:
+- Group skills (Programming, Tools, Others)
+- Add progress bars or badges
+- Add icons
+
+PROMPT:
+"Create a modern skills section with categories, animated progress bars, and icons using HTML and CSS."
+
+
+
+===============================
+🏆 6. ACHIEVEMENTS SECTION
+===============================
+
+IDEA:
+Make it visually attractive
+
+TASKS:
+- Add glassmorphism style
+- Add icons
+- Add hover effects
+
+PROMPT:
+"Create a transparent glassmorphism card design with blur effect for an achievements section."
+
+
+
+===============================
+📩 7. CONTACT SYSTEM
+===============================
+
+IDEA:
+Make it easy to reach me
+
+TASKS:
+- Add contact form
+- Connect to EmailJS or Telegram bot
+- Add validation
+
+PROMPT:
+"Create a contact form using HTML, CSS, and JavaScript that sends messages via EmailJS. Include validation and success message."
+
+
+
+===============================
+🤖 8. AI CHATBOT (ADVANCED)
+===============================
+
+IDEA:
+Standout feature for portfolio
+
+TASKS:
+- Add chat UI
+- Connect to OpenAI API
+- Add predefined knowledge (about me)
+
+PROMPT:
+"Create a simple AI chatbot widget for a portfolio website using JavaScript and OpenAI API that answers questions about the developer and their projects."
+
+
+
+===============================
+🌗 9. DARK / LIGHT MODE
+===============================
+
+IDEA:
+Modern UX feature
+
+TASKS:
+- Add toggle button
+- Save preference in localStorage
+
+PROMPT:
+"Implement a dark/light mode toggle using JavaScript with localStorage support and smooth transitions."
+
+
+
+===============================
+⚡ 10. PERFORMANCE + CLEAN CODE
+===============================
+
+IDEA:
+Make site fast and maintainable
+
+TASKS:
+- Split CSS into sections
+- Minimize JS
+- Optimize images
+
+PROMPT:
+"Optimize a portfolio website for performance by reducing CSS and JavaScript size, lazy loading images, and improving loading speed."
+
+
+
+===============================
+🚀 FINAL GOAL
+===============================
+
+Positioning:
+"I build AI-powered Telegram bots and automation systems that save time and increase efficiency."
+
+Target:
+- Freelance clients
+- Automation projects
+- AI-based solutions
+
+===============================
