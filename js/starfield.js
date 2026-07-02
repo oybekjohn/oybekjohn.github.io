@@ -203,8 +203,10 @@
     resizeTimeout = setTimeout(resize, 200);
   }, { passive: true });
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   setInterval(() => {
-    if (isVisible && shootingStars.length < 2) {
+    if (!prefersReducedMotion && isVisible && shootingStars.length < 2) {
       shootingStars.push(createShootingStar());
     }
   }, SHOOTING_STAR_INTERVAL);
@@ -213,6 +215,13 @@
   resize();
   mouseX = W / 2;
   mouseY = H / 2;
-  animationId = requestAnimationFrame(animate);
+
+  if (prefersReducedMotion) {
+    // Respect user's OS-level motion preference: render one static frame, no drift/twinkle/shooting stars.
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) drawParticle(particles[i], 0);
+  } else {
+    animationId = requestAnimationFrame(animate);
+  }
 
 })();

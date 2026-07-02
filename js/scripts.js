@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navPanel.classList.toggle('open');
-        document.body.style.overflow = navPanel.classList.contains('open') ? 'hidden' : '';
+        const isOpen = navPanel.classList.contains('open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        hamburger.setAttribute('aria-expanded', String(isOpen));
     });
 
     navLinks.forEach(link => {
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.remove('active');
             navPanel.classList.remove('open');
             document.body.style.overflow = '';
+            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 
@@ -68,8 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => fadeObserver.observe(el));
 
     // ---- Scroll to Top ----
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        scrollTopBtn.classList.toggle('visible', window.pageYOffset > 400);
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            scrollTopBtn.classList.toggle('visible', window.pageYOffset > 400);
+            scrollTicking = false;
+        });
     }, { passive: true });
 
     scrollTopBtn.addEventListener('click', () => {
@@ -138,6 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
         hero_bio3: {
             url: 'https://t.me/data_analitiks',
             linkKey: 'hero_bio3_link'
+        },
+        hero_bio4: {
+            url: 'https://dl-library.uz/',
+            linkKey: 'hero_bio4_link'
         }
     };
 
@@ -169,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkInfo = LINK_MAP[key];
             if (t[key] !== undefined && linkInfo) {
                 const linkText = t[linkInfo.linkKey] || linkInfo.url;
-                el.innerHTML = `<a href="${linkInfo.url}" target="_blank">${linkText}</a>${t[key]}`;
+                el.innerHTML = `<a href="${linkInfo.url}" target="_blank" rel="noopener noreferrer">${linkText}</a>${t[key]}`;
             }
         });
 
@@ -192,7 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update active language button
         langButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            const isActive = btn.getAttribute('data-lang') === lang;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
         });
 
         // Update resume button

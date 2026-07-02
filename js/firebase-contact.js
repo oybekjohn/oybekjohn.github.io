@@ -17,6 +17,27 @@
     measurementId: "G-YRQCL9GMCZ"
   };
 
+  // ---- Telegram direct-message button: reflects the draft as the visitor types ----
+  const telegramBtn = document.getElementById('contactTelegramBtn');
+  if (telegramBtn) {
+    const nameInput = document.getElementById('contactName');
+    const messageInput = document.getElementById('contactMessage');
+
+    function updateTelegramLink() {
+      const name = nameInput.value.trim();
+      const message = messageInput.value.trim();
+      if (!name && !message) {
+        telegramBtn.href = 'https://t.me/smartslave';
+        return;
+      }
+      const text = name ? `${name}: ${message}` : message;
+      telegramBtn.href = `https://t.me/smartslave?text=${encodeURIComponent(text)}`;
+    }
+
+    nameInput.addEventListener('input', updateTelegramLink);
+    messageInput.addEventListener('input', updateTelegramLink);
+  }
+
   // Wait for Firebase SDK to load
   function waitForFirebase(callback) {
     if (typeof firebase !== 'undefined' && firebase.firestore) {

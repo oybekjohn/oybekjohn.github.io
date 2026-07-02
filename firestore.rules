@@ -1,0 +1,37 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Contact form submissions from js/firebase-contact.js.
+    // Clients may only create a message with the exact expected shape —
+    // they can never read, list, update, or delete messages (that stays
+    // console/admin-only), which stops both data scraping and tampering.
+    match /messages/{messageId} {
+      allow read, update, delete: if false;
+
+      allow create: if
+        request.resource.data.keys().hasOnly(['name', 'email', 'message', 'timestamp', 'lang', 'userAgent', 'read']) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0 &&
+        request.resource.data.name.size() <= 100 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() <= 200 &&
+        request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$') &&
+        request.resource.data.message is string &&
+        request.resource.data.message.size() >= 10 &&
+        request.resource.data.message.size() <= 5000 &&
+        request.resource.data.lang is string &&
+        request.resource.data.lang.size() <= 10 &&
+        request.resource.data.userAgent is string &&
+        request.resource.data.userAgent.size() <= 500 &&
+        request.resource.data.timestamp == request.time &&
+        request.resource.data.read == false;
+    }
+
+    // Deny everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
