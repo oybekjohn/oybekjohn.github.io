@@ -110,7 +110,7 @@ const translations = {
 
     proj1_title: "AI asosidagi Telegram Botlar va Avtomatlashtirish",
     proj1_problem: "Bizneslar takrorlanuvchi qo'lda bajariladigan ishlarga va mijozlarga sekin javob berishga ko'plab soatlarini yo'qotmoqda.",
-    proj1_solution: "Python, Django REST va PostgreSQL asosida har bir ish jarayoniga moslashtirilgan, AI asosidagi Telegram botlar va backend avtomatlashtirish tizimlarini yarataman.",
+    proj1_solution: "Python, Django REST va PostgreSQL asosida AI asosidagi Telegram botlar va backend avtomatlashtirish tizimlarini yarataman — bundan tashqari, AI agentlarini sozlash, qurish va o'rnatish, hamda biznesingizga moslab AI modellarini fine-tuning qilib beraman.",
     proj1_result: "Mijozlar uchun tezroq javob va kamroq qo'lda mehnat — bu hozir mening asosiy frilanser xizmatim.",
     proj1_cta: "Buyurtma berish →",
 
@@ -134,9 +134,15 @@ const translations = {
 
     proj5_title: "DL-Library.uz — Raqamli Kutubxona Platformasi",
     proj5_problem: "Universitet Axborot texnologiyalari kafedrasi talabalari fanlar bo'yicha dasturlar, darsliklar va uslubiy qo'llanmalarni topish uchun yagona joyga ega emas edi.",
-    proj5_solution: "Kategoriya bo'yicha filtrlash, qidiruv va UZ/RU/EN til qo'llab-quvvatlashiga ega raqamli kutubxona platformasini hammuallif sifatida yaratdim — IT, AI, Iqtisodiyot va Biznes yo'nalishlarida 35+ o'quv resursini tizimladim.",
+    proj5_solution: "Kategoriya bo'yicha filtrlash, qidiruv va UZ/RU/EN til qo'llab-quvvatlashiga ega raqamli kutubxona platformasini hammuallif sifatida yaratdim — IT, AI, Iqtisodiyot va Biznes yo'nalishlarida 35+ o'quv resursini tizimladim. Ma'lumotlar bazasini oson boshqarish uchun Telegram bot ham qo'shdim.",
     proj5_result: "Talabalarga o'quv materiallariga tez va tartibli kirish imkonini beruvchi, faol ishlatilayotgan tayyor kutubxona.",
     proj5_link: "Kutubxonaga o'tish",
+
+    proj6_title: "Mudroq So'zlar — O'zbek Tili Lug'at O'rganish Platformasi",
+    proj6_problem: "O'zbek tilida so'zlashuvchilar noyob va murakkab so'zlarni topish va o'rganish uchun qulay vosita topa olmasdi.",
+    proj6_solution: "Foydalanuvchilarga oddiy va qiziqarli tarzda kamdan-kam uchraydigan o'zbekcha so'zlarni o'rgatuvchi veb-platforma yaratdim.",
+    proj6_result: "Foydalanuvchilarga o'zbek tilidagi lug'at boyligini oshirishga yordam beruvchi, ishlab turgan vosita.",
+    proj6_link: "Platformaga o'tish",
 
     // Awards
     sec_awards: "Yutuqlar va Sertifikatlar",
@@ -303,7 +309,7 @@ const translations = {
 
     proj1_title: "AI-боты для Telegram и автоматизация",
     proj1_problem: "Бизнесы теряют часы на повторяющиеся ручные задачи и медленные ответы клиентам.",
-    proj1_solution: "Создаю AI-ботов для Telegram и системы автоматизации на Python, Django REST и PostgreSQL, адаптированные под конкретные бизнес-процессы.",
+    proj1_solution: "Создаю AI-ботов для Telegram и системы автоматизации на Python, Django REST и PostgreSQL — а также настраиваю, создаю и внедряю AI-агентов и провожу fine-tuning моделей под задачи вашего бизнеса.",
     proj1_result: "Более быстрые ответы и меньше ручного труда для клиентов — теперь это моя основная фриланс-услуга.",
     proj1_cta: "Обсудим ваш проект →",
 
@@ -327,9 +333,15 @@ const translations = {
 
     proj5_title: "DL-Library.uz — Платформа цифровой библиотеки",
     proj5_problem: "У студентов IT-кафедры университета не было единого места для поиска учебных программ, учебников и методических пособий по предметам.",
-    proj5_solution: "Соразработал платформу цифровой библиотеки с фильтрами по категориям, поиском и поддержкой UZ/RU/EN языков, систематизировав 35+ учебных материалов по направлениям IT, ИИ, экономика и бизнес.",
+    proj5_solution: "Соразработал платформу цифровой библиотеки с фильтрами по категориям, поиском и поддержкой UZ/RU/EN языков, систематизировав 35+ учебных материалов по направлениям IT, ИИ, экономика и бизнес. Также добавил Telegram-бота для удобного управления базой данных.",
     proj5_result: "Действующая, активно используемая библиотека, дающая студентам быстрый и организованный доступ к учебным материалам.",
     proj5_link: "Перейти в библиотеку",
+
+    proj6_title: "Mudroq So'zlar — платформа изучения узбекской лексики",
+    proj6_problem: "У носителей узбекского языка не было удобного инструмента для поиска и изучения редких и сложных слов.",
+    proj6_solution: "Создал веб-платформу, которая обучает редким и продвинутым узбекским словам простым и увлекательным способом.",
+    proj6_result: "Действующий инструмент, помогающий пользователям расширять словарный запас узбекского языка.",
+    proj6_link: "Перейти на платформу",
 
     sec_awards: "Достижения и сертификаты",
     award1_title: "\"ЛУЧШИЙ ПРЕПОДАВАТЕЛЬ ГОДА\"",
@@ -493,7 +505,7 @@ const translations = {
 
     proj1_title: "AI-Powered Telegram Bots & Automation",
     proj1_problem: "Businesses lose hours to repetitive manual tasks and slow customer responses.",
-    proj1_solution: "I build custom AI-powered Telegram bots and backend automation systems with Python, Django REST, and PostgreSQL — tailored to each workflow.",
+    proj1_solution: "I build custom AI-powered Telegram bots and backend automation systems with Python, Django REST, and PostgreSQL — plus setting up, building, and installing AI agents, and fine-tuning AI models for your specific business needs.",
     proj1_result: "Faster responses and less manual work for clients — now my core freelance service.",
     proj1_cta: "Let's Build Yours →",
 
@@ -517,9 +529,15 @@ const translations = {
 
     proj5_title: "DL-Library.uz — Digital Library Platform",
     proj5_problem: "Students in the university's IT department had no centralized place to find course syllabi, textbooks, and methodological guides across subjects.",
-    proj5_solution: "Co-built a digital library platform with category filters, search, and UZ/RU/EN language support, organizing 35+ learning resources across IT, AI, Economics, and Business.",
+    proj5_solution: "Co-built a digital library platform with category filters, search, and UZ/RU/EN language support, organizing 35+ learning resources across IT, AI, Economics, and Business. Also added a Telegram bot for easy database management.",
     proj5_result: "A live, actively used library giving students fast, organized access to course materials.",
     proj5_link: "Visit Library",
+
+    proj6_title: "Mudroq So'zlar — Uzbek Vocabulary Learning Platform",
+    proj6_problem: "Uzbek speakers had no easy way to discover and learn rare, advanced words to enrich their vocabulary.",
+    proj6_solution: "Built a web platform that teaches rare and advanced Uzbek words in a simple, engaging way.",
+    proj6_result: "A live tool helping users grow their Uzbek vocabulary with rare words.",
+    proj6_link: "Visit Platform",
 
     sec_awards: "Awards & Certifications",
     award1_title: "\"TEACHER OF THE YEAR\"",
@@ -683,7 +701,7 @@ const translations = {
 
     proj1_title: "بوتات تيليجرام ذكية وأنظمة أتمتة",
     proj1_problem: "تفقد الشركات ساعات في المهام اليدوية المتكررة والردود البطيئة على العملاء.",
-    proj1_solution: "أبني بوتات تيليجرام ذكية وأنظمة أتمتة خلفية باستخدام Python وDjango REST وPostgreSQL، مصممة خصيصاً لكل سير عمل.",
+    proj1_solution: "أبني بوتات تيليجرام ذكية وأنظمة أتمتة خلفية باستخدام Python وDjango REST وPostgreSQL — كما أقوم بإعداد وبناء وتثبيت وكلاء الذكاء الاصطناعي، وضبط النماذج (fine-tuning) لتناسب احتياجات عملك.",
     proj1_result: "استجابة أسرع وعمل يدوي أقل للعملاء — وهي الآن خدمتي الأساسية كعمل حر.",
     proj1_cta: "لنبنِ مشروعك ←",
 
@@ -707,9 +725,15 @@ const translations = {
 
     proj5_title: "DL-Library.uz — منصة مكتبة رقمية",
     proj5_problem: "لم يكن لدى طلاب قسم تكنولوجيا المعلومات بالجامعة مكان مركزي للعثور على المناهج والكتب الدراسية والأدلة المنهجية للمواد.",
-    proj5_solution: "شاركت في بناء منصة مكتبة رقمية بفلاتر حسب الفئة وبحث ودعم لغات UZ/RU/EN، ونظّمت أكثر من 35 مصدراً تعليمياً في مجالات تكنولوجيا المعلومات والذكاء الاصطناعي والاقتصاد والأعمال.",
+    proj5_solution: "شاركت في بناء منصة مكتبة رقمية بفلاتر حسب الفئة وبحث ودعم لغات UZ/RU/EN، ونظّمت أكثر من 35 مصدراً تعليمياً في مجالات تكنولوجيا المعلومات والذكاء الاصطناعي والاقتصاد والأعمال. كما أضفت بوت تيليجرام لإدارة قاعدة البيانات بسهولة.",
     proj5_result: "مكتبة فعلية نشطة الاستخدام تمنح الطلاب وصولاً سريعاً ومنظماً إلى المواد الدراسية.",
     proj5_link: "زيارة المكتبة",
+
+    proj6_title: "Mudroq So'zlar — منصة تعلم المفردات الأوزبكية",
+    proj6_problem: "لم يكن لدى الناطقين بالأوزبكية وسيلة سهلة لاكتشاف وتعلم الكلمات النادرة والمتقدمة لإثراء مفرداتهم.",
+    proj6_solution: "بنيت منصة ويب تعلّم الكلمات الأوزبكية النادرة والمتقدمة بطريقة بسيطة وممتعة.",
+    proj6_result: "أداة فعلية تساعد المستخدمين على توسيع مفرداتهم الأوزبكية بكلمات نادرة.",
+    proj6_link: "زيارة المنصة",
 
     sec_awards: "الإنجازات والشهادات",
     award1_title: "\"أفضل معلم لهذا العام\"",
